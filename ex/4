@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+class Eda{
+    public:
+        int price;
+        Eda(int price) {
+        this->price = price;
+        }
+};
+
+int main(){
+    Eda apple(250); //создали объект Яблоко с ценой 250
+    Eda orange(150); //создали объект Апельсин с ценой 150
+
+    Eda dorogoy_orange = orange; //Копирующий конструктор всех полей. Создается объект дорогой_апельсин, такой же, как и обычный апельсин
+ 
+    cout << apple.price << " " << orange.price << " " << dorogoy_orange.price <<endl; //выводим цену трех фруктов
+ 
+    dorogoy_orange.price=700; //меняем цену у дорогого апельсина
+ 	cout << apple.price << " " << orange.price << " " << dorogoy_orange.price <<endl; //выводим новые цены на три фукта. Как видно, дорогой апельсин подорожал, а обычный остался с такими же параметрами.
+	return 0;
+}
